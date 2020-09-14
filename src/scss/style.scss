@@ -1,2 +1,76 @@
+// @use "@material/theme" with (
+//   $primary: #311b92,
+//   $secondary: #fafafa,
+//   $on-primary: #ffffff,
+//   $on-secondary: #000000,
+// );
+
 @use '@material/button/mdc-button';
 @use '@material/button';
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/drawer";
+@use "@material/list";
+@use "@material/card";
+@use "@material/layout-grid/mdc-layout-grid";
+@use "@material/typography/mdc-typography";
+@use "@material/data-table/data-table";
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+
+@include card.core-styles;
+@include icon-button.core-styles;
+@include drawer.core-styles;
+@include drawer.modal-core-styles;
+@include list.core-styles;
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+.w-100 {
+  width: 100%;
+}
+
+// main content top cards
+.top-card {
+  height: 134px;
+  .top-card__primary-action {
+    display: flex;
+    flex-direction: row;
+  }
+  .mdc-card__media {
+    width: 100px;
+  }
+  .top-card__primary {
+    padding: 1rem;
+    flex-grow: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .mdc-top-app-bar--fixed {
+    z-index: 8;
+  }
+  .drawer-toggler {
+    display: none;
+  }
+  #sidebar {
+    padding-top: 64px;
+  }
+}
